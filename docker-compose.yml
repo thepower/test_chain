@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   node1:
-          image: vovike/thepower:0.0.1b
+    image: vovike/thepower:0.0.1b
     volumes:
       - type: bind
         source: ./node1.config
@@ -22,7 +22,7 @@ services:
       - ${NODE1_CCPORT}
 
   node2:
-          image: vovike/thepower:0.0.1b
+    image: vovike/thepower:0.0.1b
     volumes:
       - type: bind
         source: ./node2.config
@@ -42,7 +42,7 @@ services:
       - ${NODE2_CCPORT}
 
   node3:
-          image: vovike/thepower:0.0.1b
+    image: vovike/thepower:0.0.1b
     volumes:
       - type: bind
         source: ./node3.config

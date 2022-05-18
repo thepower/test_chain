@@ -1,0 +1,63 @@
+version: "3.3"
+
+services:
+  node1:
+    image: vovike/thepower
+    volumes:
+      - type: bind
+        source: ./node1.config
+        target: /opt/thepower/node.config
+      - type: bind
+        source: ./vm1.args
+        target: /opt/thepower/releases/0.10.1/vm.args
+      - type: bind
+        source: ./genesis.txt
+        target: /opt/thepower/genesis.txt
+    ports:
+      - 44001:${NODE1_API}
+    expose:
+      - ${NODE1_API}
+      - ${NODE1_APIS}
+      - ${NODE1_TPIC}
+      - ${NODE1_CCPORT}
+
+  node2:
+    image: vovike/thepower
+    volumes:
+      - type: bind
+        source: ./node2.config
+        target: /opt/thepower/node.config
+      - type: bind
+        source: ./vm2.args
+        target: /opt/thepower/releases/0.10.1/vm.args
+      - type: bind
+        source: ./genesis.txt
+        target: /opt/thepower/genesis.txt
+    ports:
+      - 44002:${NODE2_API}
+    expose:
+      - ${NODE2_API}
+      - ${NODE2_APIS}
+      - ${NODE2_TPIC}
+      - ${NODE2_CCPORT}
+
+  node3:
+    image: vovike/thepower
+    volumes:
+      - type: bind
+        source: ./node3.config
+        target: /opt/thepower/node.config
+      - type: bind
+        source: ./vm3.args
+        target: /opt/thepower/releases/0.10.1/vm.args
+      - type: bind
+        source: ./genesis.txt
+        target: /opt/thepower/genesis.txt
+    ports:
+      - 44003:${NODE3_API}
+    expose:
+      - ${NODE3_API}
+      - ${NODE3_APIS}
+      - ${NODE3_TPIC}
+      - ${NODE3_CCPORT}
+

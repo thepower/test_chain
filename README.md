@@ -1,4 +1,4 @@
-# thepower_test
+# thepower_test_shard
 
 Тестовый шард для ознакомления и тестирования возможностей [ThePower](https://thepower.io)
 
@@ -9,11 +9,11 @@
 ## Установка
 Из рабочей директории выполнить:
 
-    git clone https://github.com/giDai7ja/thepower_test.git
+    git clone git@github.com:thepower/test_shard.git
 
 ## Перейти в папку с проектом:
 
-    cd thepower_test
+    cd test_shard
 
 ## Запустить шард:
 
@@ -29,5 +29,3 @@
 По окончании тестирования остановить шард командой
 
     docker-compose down
-
-

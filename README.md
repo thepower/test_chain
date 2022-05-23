@@ -33,9 +33,9 @@
 
 После запуска API нод доступно по адресам:
 
-    http://localhost:44001
-    http://localhost:44002
-    http://localhost:44003
+    http://localhost:44001/api/status
+    http://localhost:44002/api/status
+    http://localhost:44003/api/status
 
 ## Остановка шарды <a name="stop"></a>
 По окончании тестирования остановить шард командой

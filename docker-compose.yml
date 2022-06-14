@@ -1,15 +1,12 @@
 version: "3.3"
 
 services:
-  node1:
-    image: thepowerio/testnode:0.0.1b
+  c1n1:
+    image: thepowerio/tpnode_evm:v0.10.1
     volumes:
       - type: bind
-        source: ./node1.config
+        source: ./c1n1.config
         target: /opt/thepower/node.config
-      - type: bind
-        source: ./vm1.args
-        target: /opt/thepower/releases/0.10.1/vm.args
       - type: bind
         source: ./genesis.txt
         target: /opt/thepower/genesis.txt
@@ -21,15 +18,12 @@ services:
       - ${NODE1_TPIC}
       - ${NODE1_CCPORT}
 
-  node2:
-    image: thepowerio/testnode:0.0.1b
+  c1n2:
+    image: thepowerio/tpnode_evm:v0.10.1
     volumes:
       - type: bind
-        source: ./node2.config
+        source: ./c1n2.config
         target: /opt/thepower/node.config
-      - type: bind
-        source: ./vm2.args
-        target: /opt/thepower/releases/0.10.1/vm.args
       - type: bind
         source: ./genesis.txt
         target: /opt/thepower/genesis.txt
@@ -41,15 +35,12 @@ services:
       - ${NODE2_TPIC}
       - ${NODE2_CCPORT}
 
-  node3:
-    image: thepowerio/testnode:0.0.1b
+  c1n3:
+    image: thepowerio/tpnode_evm:v0.10.1
     volumes:
       - type: bind
-        source: ./node3.config
+        source: ./c1n3.config
         target: /opt/thepower/node.config
-      - type: bind
-        source: ./vm3.args
-        target: /opt/thepower/releases/0.10.1/vm.args
       - type: bind
         source: ./genesis.txt
         target: /opt/thepower/genesis.txt

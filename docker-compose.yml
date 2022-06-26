@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   c1n1:
-    image: thepowerio/tpnode_evm:v0.10.1
+    image: ${IMAGE}
     volumes:
       - type: bind
         source: ./c1n1.config
@@ -10,6 +10,12 @@ services:
       - type: bind
         source: ./genesis.txt
         target: /opt/thepower/genesis.txt
+      - type: bind
+        source: ./db
+        target: /opt/thepower/db
+      - type: bind
+        source: ./log_c1n1
+        target: /opt/thepower/log
     ports:
       - 44001:${NODE1_API}
     expose:
@@ -19,7 +25,7 @@ services:
       - ${NODE1_CCPORT}
 
   c1n2:
-    image: thepowerio/tpnode_evm:v0.10.1
+    image: ${IMAGE}
     volumes:
       - type: bind
         source: ./c1n2.config
@@ -27,6 +33,12 @@ services:
       - type: bind
         source: ./genesis.txt
         target: /opt/thepower/genesis.txt
+      - type: bind
+        source: ./db
+        target: /opt/thepower/db
+      - type: bind
+        source: ./log_c1n2
+        target: /opt/thepower/log
     ports:
       - 44002:${NODE2_API}
     expose:
@@ -36,7 +48,7 @@ services:
       - ${NODE2_CCPORT}
 
   c1n3:
-    image: thepowerio/tpnode_evm:v0.10.1
+    image: ${IMAGE}
     volumes:
       - type: bind
         source: ./c1n3.config
@@ -44,6 +56,12 @@ services:
       - type: bind
         source: ./genesis.txt
         target: /opt/thepower/genesis.txt
+      - type: bind
+        source: ./db
+        target: /opt/thepower/db
+      - type: bind
+        source: ./log_c1n3
+        target: /opt/thepower/log
     ports:
       - 44003:${NODE3_API}
     expose:

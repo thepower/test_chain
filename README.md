@@ -1,43 +1,81 @@
-# thepower_test_shard
+# How to install and start a local testnet?
 
-1. [Предупреждение](#dis)
-2. [Необходимые компоненты](#req)
-3. [Установка](#install)
-4. [Запуск шарды](#run)
-5. [Остановка шарды](#stop)
+This manual describes how you can configure a local testnet.
 
-Тестовый шард для ознакомления и тестирования возможностей [ThePower](https://thepower.io)
+Here are some terms to start with:
 
-## Предупреждение <a name="dis"></a>
+- Testnet,
+- Test shard,
+- Test chain.
 
-:warning:  В данной шарде используются предустановленные приватные ключи нод. Данные ключи находятся в открытом доступе и предназначены только для тестирования. Применение тестовой шарды в реальной системе скомпрометирует её
+These terms mean the same, except that you can form your testnet out of more than one chain.
 
-## Необходимые компоненты <a name="req"></a>
-* git
-* docker-compose
+## Testnet installation
 
-## Установка <a name="install"></a>
-Из рабочей директории выполнить:
+> **Attention**
+>
+> This testnet uses preinstalled private keys for nodes. These keys are open and used for testing purposes only. Therefore, the testnet will be compromised when using it in a real-world system.
 
-    git clone https://github.com/thepower/test_shard.git
+### Prerequisites
 
-Далее необходимо перейти в папку с проектом
+To start the testnet, ensure you have the following software installed on your machine:
 
-    cd test_shard
+- git,
+- docker-compose.
 
-## Запуск шарды <a name="run"></a>
+> **Note**
+>
+> If you use Unix, you must be included into the user group `docker` to use `docker-compose`.
+>
+> To check the groups, you are included into, run:
+>
+> ```bash
+> $ groups
+> ```
+> To include your account into the group `docker`, run:
+>
+> ```bash
+> # usermod -a docker
+> ```
+>
+> This group is available only after you have installed Docker. If you haven't installed it yet, here is a [How-To](https://docs.docker.com/engine/install/). Go to the link and choose your OS.
 
-Для запуска тестовой шарды выполните команду
+### Installation
 
-    docker-compose up -d
+To install the testnet:
 
-После запуска API нод доступно по адресам:
+1. Clone the `test_shard` repository into your working directory using the following command:
 
-    http://localhost:44001/api/status
-    http://localhost:44002/api/status
-    http://localhost:44003/api/status
+   ```bash
+   git clone https://github.com/thepower/test_shard.git
+   ```
 
-## Остановка шарды <a name="stop"></a>
-По окончании тестирования остановить шард командой
+2. Go to `test_shard` directory:
 
-    docker-compose down
+   ```bash
+   cd test_shard
+   ```
+
+### Starting the testnet
+
+To start a testnet, run:
+
+```bash
+docker-compose up -d
+```
+
+After starting the testnet, node API is available under the following addresses:
+
+```text
+http://localhost:44001/api/status
+http://localhost:44002/api/status
+http://localhost:44003/api/status
+```
+
+### Stopping the testnet
+
+Please, stop your local testnet after completing all necessary testing or development. To stop the testnet, run:
+
+```bash
+docker-compose down
+```

@@ -47,7 +47,7 @@ To install the testnet:
 1. Clone the `test_shard` repository into your working directory using the following command:
 
    ```bash
-   git clone https://github.com/thepower/test_shard.git
+   git clone https://github.com/thepower/test_chain.git
    ```
 
 2. Go to `test_shard` directory:

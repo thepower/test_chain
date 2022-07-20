@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
   c1n1:
+    restart: unless-stopped
     image: ${IMAGE}
     volumes:
       - type: bind
@@ -25,6 +26,7 @@ services:
       - ${NODE1_CCPORT}
 
   c1n2:
+    restart: unless-stopped
     image: ${IMAGE}
     volumes:
       - type: bind
@@ -48,6 +50,7 @@ services:
       - ${NODE2_CCPORT}
 
   c1n3:
+    restart: unless-stopped
     image: ${IMAGE}
     volumes:
       - type: bind

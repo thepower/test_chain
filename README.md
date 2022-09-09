@@ -25,7 +25,7 @@ To start the testnet, ensure you have the following software installed on your m
 
 > **Note**
 >
-> If you use Unix, you must be included into the user group `docker` to use `docker-compose`.
+> If you use Unix and if you is not root, you must be included into the user group `docker` to use `docker-compose`.
 >
 > To check the groups, you are included into, run:
 >
@@ -35,7 +35,7 @@ To start the testnet, ensure you have the following software installed on your m
 > To include your account into the group `docker`, run:
 >
 > ```bash
-> # usermod -a docker
+> $ sudo usermod -aG docker
 > ```
 >
 > This group is available only after you have installed Docker. If you haven't installed it yet, here is a [How-To](https://docs.docker.com/engine/install/). Go to the link and choose your OS.

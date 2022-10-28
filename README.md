@@ -53,7 +53,7 @@ To install the testnet:
 2. Go to `test_shard` directory:
 
    ```bash
-   cd test_shard
+   cd test_chain
    ```
 
 ### Starting the testnet
